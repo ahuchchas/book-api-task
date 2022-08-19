@@ -27,9 +27,8 @@
 
 #search-button {
     padding: 10px;
-    background-color: cornflowerblue;
+    background-color: tomato;
     font-weight: bold;
     color: #fff;
-    border: none;
-    border-radius: 5px;
+    border: 0px;
 }

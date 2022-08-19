@@ -1,6 +1,7 @@
 const loadBookData = () => {
     const searchBox = document.getElementById('search-box');
     const searchText = searchBox.value;
+    document.getElementById('search-button').innerText = `Loading...`;
     const url = `https://openlibrary.org/search.json?q=${searchText}`;
     fetch(url)
         .then(res => res.json())
@@ -11,8 +12,8 @@ const displayBooks = data => {
     const bookInfoArea = document.getElementById('display-bookinfo');
 
     const foundData = document.getElementById('found-showing');
-    foundData.innerText = `Total found: ${data?.num_found}
-    Total showing: ${data?.docs.length}`;
+    foundData.innerHTML = `<b>Total found:</b> ${data?.num_found}<br>
+    <b>Total showing:</b> ${data?.docs.length}`;
 
 
     //book name, author if found, first published if found, how much found, how much showing
@@ -27,5 +28,7 @@ const displayBooks = data => {
         `;
         bookInfoArea.appendChild(div);
     });
+
+    document.getElementById('search-button').innerText = `Search`;
 
 }
