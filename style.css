@@ -10,6 +10,13 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+@media only screen and (max-width: 600px) {
+    #display-bookinfo {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
 .search-area {
     display: block;
     margin: 20px;
